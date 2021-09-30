@@ -1,0 +1,16 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority: fake-ca-file
+    server: https://localhost:8080
+  name: post-cluster
+contexts:
+- context:
+    cluster: post-cluster
+    namespace: mservice-post
+    user: developer
+  name: post-service
+current-context: post-service
+kind: Config
+preferences: {}
+users: null

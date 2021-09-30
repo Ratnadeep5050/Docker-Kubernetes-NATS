@@ -16,10 +16,10 @@ app.post('/event', (req, res) => {
 
     events.push(event);
 
-    axios.post("http://localhost:4000/event", event);
-    axios.post("http://localhost:4001/event", event);
-    axios.post("http://localhost:4003/event", event);
-    axios.post("http://localhost:4004/event", event);
+    axios.post("http://posts-clusterip-service:4000/event", event);
+    axios.post("http://comment-service:4001/event", event);
+    axios.post("http://post-comment-query-service:4003/event", event);
+    axios.post("http://moderation-service:4004/event", event);
 
     res.send({
         status: "OK"
